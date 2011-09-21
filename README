@@ -1,0 +1,27 @@
+Proof of concept to get Wifi keys from Telefonica provider.
+
+Simple script to test de weak security of Telefonica WEP keys.
+Basically it does:
+ - Run kismet to capture wifi packages
+ - Run wlandecrypter to generate candidate keys
+ - Run weplab to test the keys
+
+------------------------------
+INSTALL:
+Prerequisites
+ $ sudo apt-get install  perl xterm kismet weplab
+ $ wget http://wlandecrypter.googlecode.com/files/wlandecrypter-1.2.tar.gz
+ $ tar xzf wlandecrypter-1.2.tar.gz
+ $ cd wlandecrypter-1.2
+ $ make
+ $ sudo make install
+Installation
+ $ wget http://github.com/DavidEGx/wlanXcript/tarball/master
+ $ tar xzf wlanXcrypt
+ $ cd wlanXcrypt
+ $ chmod +x wlanXcrypt
+
+
+USAGE:
+ $ sudo perl ./wlanXcript.pl
+
