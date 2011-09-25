@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +53,10 @@
 		font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
 	}
 
+	.content_img {
+		margin: 10px; 
+	}
+
   </style>
 
 </head>
@@ -74,21 +79,45 @@
     <div class="description">
       Proof of concept to get Wifi keys from Telefonica provider
     </div>
-
+	Telefonica provider uses a really weak keys on his routers. This is just a proof on concept to show this weakness.<br/>
+	Running this script we will get several Wifi keys in only a few minutes.
     <h2>Dependencies</h2>
-<p>perl
-xterm
-kismet
-wlandecrypter
-weplab</p>
+In order to use wlanXcript we need a GNU/Linux system with the following software installed:
+<ul><li>perl</li><li>xterm</li><li>kismet</li><li>wlandecrypter</li><li>weplab</li></ul>
+In Debian or Ubuntu:
+<pre class="terminal">
+	<span class="codeline">$ sudo apt-get install  perl xterm kismet weplab</span>
+	<span class="codeline">$ wget http://wlandecrypter.googlecode.com/files/wlandecrypter-1.2.tar.gz</span>
+	<span class="codeline">$ tar xzf wlandecrypter-1.2.tar.gz</span>
+	<span class="codeline">$ cd wlandecrypter-1.2</span>
+	<span class="codeline">$ make</span>
+	<span class="codeline">$ sudo make install</span>
+</pre>
+After install kismet we will need to configure it: <a href="http://www.kismetwireless.net/documentation.shtml"> Kismet documentation</a>.
+<h2>Install</h2>
+Once we meed the dependences just:
+	<pre class="terminal">
+	<span class="codeline">$ wget http://github.com/DavidEGx/wlanXcript/tarball/master</span>
+	<span class="codeline">$ tar xzf wlanXcrypt</span>
+	<span class="codeline">$ cd wlanXcrypt</span>
+	<span class="codeline">$ chmod +x wlanXcrypt</span>
+	</pre>
+<h2>Use</h2>
+Just run:
+<pre class="terminal">
+<span class="codeline">$ sudo ./wlanXcript</span>
+</pre>
+and you will have something like this:
+<img class="content_img" src="wlanXcript.jpg" alt="Picture of wlanXcript running" width="680" />
+Every 5 minutes the script is going to check for new keys.
+Sooner or later the script will print the keys of the Telefonica Wireless networks (the WLAN_?? kind).
 <h2>License</h2>
-<p>GPLv3</p>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a></p>
 <h2>Authors</h2>
-<p>David Escribano García (davidegx@gmail.com)
-<br/>
+<p>David Escribano Garc&iacute;a (davidegx@gmail.com)
 <br/>      </p>
 <h2>Contact</h2>
-<p>David Escribano García (davidegx@gmail.com)
+<p>David Escribano Garc&iacute;a (davidegx@gmail.com)
 <br/>      </p>
 
 
@@ -100,7 +129,7 @@ weplab</p>
     </p>
     <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
       by running:
-      <pre>$ git clone git://github.com/DavidEGx/wlanXcript</pre>
+      <pre class="terminal"><span class="codeline">$ git clone git://github.com/DavidEGx/wlanXcript</span></pre>
     </p>
 
     <div class="footer">
